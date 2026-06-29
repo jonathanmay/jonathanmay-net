@@ -4,7 +4,7 @@
 
 ## Where things stand
 
-TODO: one or two paragraphs on the current state.
+Live and deployed; polished static site with theme toggle and scroll-reveal animations. Clean git history, no blockers.
 
 ## In progress
 
@@ -12,4 +12,4 @@ TODO: one or two paragraphs on the current state.
 
 ## Blockers
 
-- (none)
+- None.

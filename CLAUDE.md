@@ -7,7 +7,7 @@
 
 ## What this is
 
-TODO: describe the project.
+Personal portfolio and professional site for Jonathan May — CV plus 20+ AI/software projects. Static HTML/CSS/JS, deployed on Fly.io (jonathanmay.net).
 
 ## How to work in it
 
