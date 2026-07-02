@@ -1,5 +1,37 @@
 # Review — portfolio
 
+## Nightly review — 2026-07-03
+
+### 1. Refactor / simplify / improve
+
+The code is unchanged since yesterday's review, so **the four items from the 2026-07-02
+section below still stand** and are not repeated here. In priority order they remain: the
+dark-mode FOUC fix (highest value/minute), restoring mobile nav, a real OG preview image,
+and the DECISIONS.md placeholder date. One genuinely new observation:
+
+- **Honour `prefers-color-scheme` for first-time visitors.** The theme is light by default
+  and only flips to dark if the user has previously chosen it (`script.js:4-5`, `styles.css`
+  has no `@media (prefers-color-scheme: dark)` block). A visitor whose OS is in dark mode and
+  who has never toggled the site gets a bright light page. Fix: on first load, when there's no
+  stored `theme`, fall back to `window.matchMedia("(prefers-color-scheme: dark)")`. Best done
+  in the same inline `<head>` script proposed for the FOUC fix, so it's one small change, not
+  two. Effort: folds into the FOUC item, ~10 min extra.
+
+Nothing else is worth doing. The site is genuinely in good shape.
+
+### 2. Step back
+
+Reviewed one day ago and unchanged, so there is little new to say and that is the honest
+answer, not an evasion. The positioning is right, the voice is strong, and the site earns its
+place as a low-maintenance, live shop-window. No case for pausing, merging, or abandoning.
+
+The one thing worth a human's judgement (carried over, because it's the only item with real
+downside rather than polish): the public open-source promise at `index.html:374` is a cheque
+the site can't yet cash. It has now sat for a while. The cleanest resolution is a decision
+either way — pick 2–3 projects to actually release, or soften the wording to something you're
+comfortable leaving up indefinitely — rather than leaving an open invitation you may not be
+ready to answer. This is exactly backlog item #1; it deserves to stay at the top.
+
 ## Nightly review — 2026-07-02
 
 ### 1. Refactor / simplify / improve
