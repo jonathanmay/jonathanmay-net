@@ -1,5 +1,37 @@
 # Review — portfolio
 
+## Nightly review — 2026-07-04
+
+### 1. Refactor / simplify / improve
+
+None worth doing. The source is unchanged since the last two reviews (index.html last
+edited June 23; styles.css / script.js June 2), so nothing new has appeared. The four
+proposals already on record still stand and are **not repeated here** — in priority order:
+the dark-mode FOUC fix folded together with honouring `prefers-color-scheme` for first-time
+visitors (highest value/minute), restoring mobile nav (`styles.css:91` still hides every nav
+link below 620px), a real ~1200×630 OG image (`index.html:13` still points at the square
+`apple-touch-icon.png`), and replacing the literal `## YYYY-MM-DD` heading in
+`docs/DECISIONS.md`. I re-verified each against the current files tonight; all four remain
+live and none has regressed or been fixed.
+
+### 2. Step back
+
+The site is fine exactly as it stands — no case for pausing, merging, or abandoning. The
+positioning, voice, and structure are right and need no rethink.
+
+Two honest flags, both carried, because nothing has changed to retire them:
+
+- **The open-source promise at `index.html:374` is the only item with real downside** (an
+  invitation the site can't yet honour). It has now sat unresolved across three reviews. The
+  clean fix is a decision either way — release 2–3 projects, or soften the wording to
+  something you're happy leaving up indefinitely. This is backlog #1 and belongs at the top.
+
+- **A meta-note on cadence.** This is the third consecutive nightly review of a finished,
+  unchanged static site, each necessarily reaching the same conclusions. That is itself a
+  signal: a portfolio that changes a few times a year doesn't need nightly automated review.
+  Consider dropping this to weekly or on-change only — the run is currently paying to
+  re-observe a stable page. (Not something I can change from here; flagging for the morning.)
+
 ## Nightly review — 2026-07-03
 
 ### 1. Refactor / simplify / improve
