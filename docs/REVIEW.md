@@ -1,5 +1,42 @@
 # Review — portfolio
 
+## Nightly review — 2026-07-05
+
+### 1. Refactor / simplify / improve
+
+None worth doing that isn't already on record. I re-verified the four carried items against
+the live files tonight and all four still stand, unchanged and unregressed (source untouched
+since index.html June 23, styles.css/script.js June 2):
+
+- **Dark-mode FOUC + honour `prefers-color-scheme`** — `script.js:4-5` still applies the
+  stored theme only after first paint, and there is still no `prefers-color-scheme` fallback,
+  so a dark-OS first-time visitor gets a light flash then a light page. One inline `<head>`
+  script fixes both. Highest value/minute. ~20 min.
+- **Mobile nav** — `styles.css:91` still hides every nav link below 620px, leaving only the
+  toggle. ~15 min to stop hiding them, ~1 hr for a proper menu.
+- **Real OG image** — `index.html:13` still points `og:image` at the square
+  `apple-touch-icon.png`; no canonical or Twitter-card tags. ~30 min once an image exists;
+  folds into the SEO backlog item.
+- **`docs/DECISIONS.md` placeholder** — still a literal `## YYYY-MM-DD — Project created`
+  heading. 30-second human fix (out of my write scope).
+
+### 2. Step back
+
+The site is fine exactly as it stands — right positioning, right voice, no case for pausing,
+merging, or abandoning.
+
+- **The open-source promise (`index.html:374`) is still the only item with real downside** —
+  a public invitation ("I'll figure out how to share it") the site can't yet honour. It has
+  now sat across four reviews. It needs a human decision, not more observation: release 2–3
+  projects, or soften the wording to something you're happy leaving up indefinitely. Backlog
+  #1, correctly.
+- **Cadence, again — and this is now the actionable point.** This is the *fourth* consecutive
+  nightly review reaching identical conclusions on an unchanged page. That is the real finding:
+  a portfolio that changes a few times a year does not warrant a nightly unattended run. Switch
+  this to weekly or on-change (trigger a review only when index.html/styles.css/script.js
+  actually change). Until then each night pays to re-confirm the same stable page.
+
+
 ## Nightly review — 2026-07-04
 
 ### 1. Refactor / simplify / improve
