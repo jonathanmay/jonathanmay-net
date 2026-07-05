@@ -1,5 +1,19 @@
 # Review — portfolio
 
+## Nightly review — 2026-07-06
+
+### 1. Refactor / simplify / improve
+
+None new. Source is untouched since the June 23 FoosTrainer commit (`index.html`; `styles.css`/`script.js` June 2), so tonight adds nothing to the four standing proposals. I re-confirmed each against the live files and all still hold — not re-argued here; see 2026-07-05 for detail. In priority order: dark-mode FOUC + honour `prefers-color-scheme` (`script.js:4-5`, ~20 min, best value/minute); restore mobile nav (`styles.css:91` hides every link below 620px, ~15 min); a real ~1200×630 OG image (`index.html:13` still points at square `apple-touch-icon.png`, ~30 min, folds into SEO backlog); replace the literal `## YYYY-MM-DD — Project created` heading in `docs/DECISIONS.md` (30-sec human fix, outside my write scope).
+
+### 2. Step back
+
+Positioning is right; no case to pause, merge, or abandon. Two points, both already on record and both needing a human, not another observation:
+
+- **Cadence is now the finding.** This is the *fifth* consecutive nightly run reaching identical conclusions on a page that has not changed in two weeks. An unattended nightly review of a portfolio that changes a few times a year is pure waste — it pays every night to re-confirm a stable page. Switch this job to weekly, or trigger only when `index.html`/`styles.css`/`script.js` actually change. This is the single highest-value action available and it is a config change, not site work.
+- **The open-source promise (`index.html:374`)** remains the only live item with downside — a public "I'll figure out how to share it" the site can't yet honour, now sat across five reviews. Decision, not observation: release 2–3 repos or soften the wording. Backlog #1.
+
+
 ## Nightly review — 2026-07-05
 
 ### 1. Refactor / simplify / improve
