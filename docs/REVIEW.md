@@ -1,5 +1,18 @@
 # Review — portfolio
 
+## Nightly review — 2026-07-07
+
+### 1. Refactor / simplify / improve
+
+None new. Verified tonight: source is byte-for-byte unchanged since the last five runs (`index.html` June 23; `styles.css`/`script.js` June 2). The four standing proposals all still hold and are not re-argued here — in priority order: dark-mode FOUC + honour `prefers-color-scheme` via a tiny inline `<head>` script (`script.js:4-5`, ~20 min, best value/minute); restore mobile nav (`styles.css:91` still hides every link below 620px, ~15 min to stop hiding / ~1 hr for a menu); a real ~1200×630 OG image (`og:image` at `index.html:13` still points at the square `apple-touch-icon.png`, ~30 min, folds into the SEO backlog item); and the literal `## YYYY-MM-DD — Project created` heading in `docs/DECISIONS.md:5` (confirmed still present — a 30-second human fix, outside my write scope).
+
+### 2. Step back
+
+Positioning, voice, and structure are right; no case to pause, merge, or abandon. Two carried points, both needing a human decision rather than another night of observation:
+
+- **Cadence is now the whole finding.** This is the *sixth* consecutive nightly run producing an identical section for a page that has not changed in two weeks. That is itself the signal: an unattended nightly review of a portfolio that changes a few times a year is pure waste — it pays every night to re-confirm a stable page and to generate diminishing-value notes like this one. The single highest-value action available is a config change, not site work: switch this job to weekly, or trigger it only when `index.html`/`styles.css`/`script.js` actually change.
+- **The open-source promise (`index.html:374`)** stays the only live item with real downside — a public "I'll figure out how to share it" the site can't yet honour, now unresolved across six reviews. It wants a decision, not another observation: release 2–3 repos or soften the wording. Backlog #1, correctly.
+
 ## Nightly review — 2026-07-06
 
 ### 1. Refactor / simplify / improve
