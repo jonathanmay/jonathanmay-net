@@ -1,5 +1,15 @@
 # Review — portfolio
 
+## Nightly review — 2026-07-12
+
+### 1. Refactor / simplify / improve
+
+None new. This is the weekly Sunday sweep; source is unchanged since June 23 (`index.html`) / June 2 (`styles.css`, `script.js`), so the four standing proposals are the whole list and are not re-argued — in priority order: dark-mode FOUC + honour `prefers-color-scheme` via a tiny inline `<head>` script (`script.js:4-5`, ~20 min, best value/minute); restore mobile nav (`styles.css:91` still hides every link below 620px, ~15 min to stop hiding / ~1 hr for a menu); a real ~1200×630 OG image (`og:image` at `index.html:13` still points at the square `apple-touch-icon.png`, ~30 min, folds into the SEO backlog item); and the literal `## YYYY-MM-DD — Project created` heading in `docs/DECISIONS.md:5` (30-second human fix, outside my write scope).
+
+### 2. Step back
+
+Positioning, voice, and structure are right; the site is fine as it stands — no case to pause, merge, or abandon. The prior runs' "switch the cadence" refrain is now resolved: reviewer gating is live and this is the expected weekly sweep, so I'm dropping it. That leaves exactly one item that needs a human decision rather than another observation: the open-source promise at `index.html:374` ("I'm hoping to open-source most of these projects") remains a public commitment the site can't yet honour, unresolved across seven reviews. Resolve it either way — release 2–3 repos or soften the wording to something you're happy leaving up indefinitely. Backlog #1, correctly at the top. Everything else is optional polish.
+
 ## Nightly review — 2026-07-07
 
 ### 1. Refactor / simplify / improve
