@@ -1,5 +1,20 @@
 # Review — portfolio
 
+<!-- statuscheck: ok -->
+## Nightly review: 2026-07-19
+
+### 1. Refactor / simplify / improve
+
+None new. Verified tonight: source is unchanged since the last several runs (`index.html` June 23; `styles.css`/`script.js` June 2). The four standing proposals still hold and are not re-argued — in priority order: dark-mode FOUC + honour `prefers-color-scheme` via a tiny inline `<head>` script (`script.js:4-5` still applies stored theme only, no OS fallback, ~20 min, best value/minute); restore mobile nav (`styles.css:91` still hides every link below 620px, ~15 min to stop hiding / ~1 hr for a menu); a real ~1200×630 OG image (`og:image` at `index.html:13` still points at the square `apple-touch-icon.png`, ~30 min, folds into the SEO backlog item); replace the literal `## YYYY-MM-DD — Project created` heading in `docs/DECISIONS.md:6` (30-second human fix, outside my write scope).
+
+### 2. Step back
+
+The site is fine exactly as it stands — right positioning, voice, and structure; no case to pause, merge, or abandon. This is the expected gated/weekly sweep of a finished static page, so there is nothing new to add. The one item that needs a human decision rather than another observation remains the public open-source promise at `index.html:374` ("I'm hoping to open-source most of these projects … I'll figure out how to share it") — a commitment the site can't yet honour. Resolve it either way: release 2–3 repos, or soften the wording to something you're happy leaving up indefinitely. It is correctly backlog #1.
+
+### 3. Doc inconsistencies
+
+`docs/DECISIONS.md:6` still carries the literal placeholder heading `## YYYY-MM-DD — Project created` instead of the real creation date. Outside my write scope (STATUS/BACKLOG/REVIEW only) — flagging for a 30-second human fix. Otherwise STATUS.md and BACKLOG.md match the repo.
+
 ## Nightly review — 2026-07-12
 
 ### 1. Refactor / simplify / improve
