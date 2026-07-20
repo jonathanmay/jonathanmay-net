@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A User Manual to Me · Jonathan May</title>
+  <meta name="description" content="A short guide to working with Jonathan May: how he thinks, what he values, what tries his patience, and how best to reach him.">
+
+  <meta property="og:title" content="A User Manual to Me · Jonathan May">
+  <meta property="og:description" content="A short guide to working with me: how I think, what I value, what tries my patience, and how best to reach me.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jonathanmay.net/manual.html">
+  <meta property="og:image" content="https://jonathanmay.net/apple-touch-icon.png">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ---------- Manual-specific layout ---------- */
+    .manual-main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 4rem); }
+
+    .manual-hero {
+      padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(2rem, 5vw, 3rem);
+      max-width: 40rem;
+    }
+    .manual-hero .eyebrow { margin-bottom: 1rem; }
+    .manual-hero h1 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      line-height: 1.04;
+      letter-spacing: -.02em;
+      margin-bottom: 1.4rem;
+    }
+    .manual-lede {
+      font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+      color: var(--text-soft);
+      max-width: 60ch;
+    }
+    .manual-hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+
+    /* Reading column */
+    .manual-body {
+      max-width: 40rem;
+      padding: clamp(1rem, 3vw, 2rem) 0 clamp(3.5rem, 8vw, 6rem);
+    }
+
+    .manual-section { padding: clamp(2.2rem, 5vw, 3rem) 0; border-top: 1px solid var(--border); }
+    .manual-section:first-child { border-top: none; }
+
+    .manual-section > h2 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(1.4rem, 3.6vw, 1.9rem);
+      letter-spacing: -.01em;
+      margin-bottom: 1.1rem;
+    }
+
+    .manual-section p { color: var(--text-soft); }
+    .manual-section p + p { margin-top: 1.05rem; }
+    .manual-section p + ul { margin-top: 1.05rem; }
+    .manual-section strong { color: var(--text); font-weight: 600; }
+
+    .manual-list { list-style: none; margin: 0; padding: 0; }
+    .manual-list li {
+      color: var(--text-soft);
+      position: relative;
+      padding-left: 1.4rem;
+      margin-top: 1.05rem;
+    }
+    .manual-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .68em;
+      width: .45rem;
+      height: .45rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .manual-list li strong { color: var(--text); font-weight: 600; }
+
+    .manual-close {
+      margin-top: clamp(2.5rem, 6vw, 4rem);
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      align-items: center;
+    }
+    .manual-close .muted { font-size: .9rem; }
+
+    @media print {
+      .site-header, .site-footer, .manual-hero-actions, .manual-close .btn { display: none !important; }
+      body { background: #fff; color: #000; }
+      .manual-section { break-inside: avoid; }
+      a { color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html#top" class="brand">Jonathan&nbsp;May</a>
+      <nav class="site-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="manual.html">User Manual</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <span class="theme-toggle-icon">◑</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="manual-main" id="top">
+
+    <section class="manual-hero">
+      <p class="eyebrow">A field guide</p>
+      <h1>A User Manual to Me</h1>
+      <p class="manual-lede">
+        A short guide to working with me: how I think, what I value, what tries
+        my patience, and how best to reach me. I wrote it so we can skip the slow
+        guesswork and get to the good part faster. None of it is a rule you have
+        to follow. It is simply me, laid out plainly, so our time together is
+        better, and so you know I would love to read yours in return.
+      </p>
+      <div class="manual-hero-actions">
+        <a class="btn btn-ghost" href="index.html">← Back to the site</a>
+        <button class="btn btn-primary" onclick="window.print()">Print or save as PDF</button>
+      </div>
+    </section>
+
+    <div class="manual-body">
+
+      <section class="manual-section">
+        <h2>When am I most useful?</h2>
+        <p>
+          I like reasoning and logic, and I think I am reasonably good at both
+          explaining and inspiring. I break complexity down. I believe in
+          experimentation over instinct, especially when the instinct is to say
+          no. I would much rather be wrong than never have tried.
+        </p>
+        <p>Beyond fixing the family IT, people tend to come to me for two things:</p>
+        <ul class="manual-list">
+          <li>
+            <strong>Influencing others to see things the same way.</strong>
+            People believe I am effective at this, despite ample evidence to the
+            contrary. I suspect it is because I am close to only a few people,
+            and those people tend, sooner or later, to see the world much as I
+            do. It is easy to extrapolate from that and assume I will have the
+            same effect on everyone. I will always try to help, but the alignment
+            people are after tends to happen by osmosis rather than by intent.
+          </li>
+          <li>
+            <strong>Absorbing new, complex information quickly and then deciding.</strong>
+            Contracts and legal agreements, finances, reports, academic papers. I
+            have a broad understanding of a lot of topics and a deep understanding
+            of very few, so I can usually follow the thread and be useful almost
+            anywhere.
+          </li>
+        </ul>
+      </section>
+
+      <section class="manual-section">
+        <h2>My style</h2>
+        <p>
+          Most people know me as a talker. In truth I find meeting new people
+          uncomfortable, and I would innately rather not talk to anyone at all. I
+          prefer to read and listen, form my own view, and then act on it, often
+          independently if I can get away with it.
+        </p>
+        <p>
+          What frustrates me is doing all of that, reaching a conclusion, and then
+          fumbling to communicate it. So when something really matters, you will
+          find me retreating into prose and documents. Writing lets me lay out a
+          coherent set of statements that test my own argument and give me room to
+          show the thinking behind it. Running a company, I am often expected to
+          make decisions about marginal things. Making them is easy; what I
+          actually care about is explaining them.
+        </p>
+        <p>
+          I like words and stories, but I am often at my most effective with
+          pictures and diagrams drawn on the fly. They are never pretty. Working
+          remotely, the thing I miss most is the simple power of a whiteboard or a
+          scrap of paper to show someone exactly what I mean.
+        </p>
+        <p>
+          When I argue, it is almost always about a failure to deliver something.
+          Whether the failure is mine or someone else's, the root cause is rarely
+          anything other than overcommitment.
+        </p>
+      </section>
+
+      <section class="manual-section">
+        <h2>What I value</h2>
+        <p>I value the people closest to me, my family first.</p>
+        <p>
+          I have enormous energy for fairness, to the point where others sometimes
+          find it ridiculous. I will happily go against my own interests and
+          better judgement to reach a fair outcome.
+        </p>
+        <p>
+          Logic matters to me. Some things simply are, but for me the joy is in
+          the understanding, and I have deep reverence for a good explanation.
+          Some things are beautiful, in prose, music, buildings, books and art. I
+          revere uniqueness as much as beauty, and the destruction of something
+          unique feels like an assault on my soul. And bad dad humour runs through
+          my head on a constant loop.
+        </p>
+        <p>
+          I value building new things that might solve big problems, whether that
+          is a local meetup, a one-off gathering, a piece of software or a whole
+          organisation. When I build something new I do not mind failure at all; I
+          expect it. Most of the time no one cares if you fail, and there is little
+          real risk in trying.
+        </p>
+        <p>
+          The flip side is that I resent people who get in the way, even with a
+          well-meant "let's plan" or "let's discuss". I find it intensely
+          frustrating to plan for things whose external context is unknown and
+          uncontrollable, and I suspect that most people who believe you can are
+          simply deferring action out of fear. You can plan for your own responses
+          to a situation, not for what the world will do. The rest is mostly luck,
+          and the marginal value of more planning is tiny. These are my own views,
+          and I accept that some of them are extreme.
+        </p>
+      </section>
+
+      <section class="manual-section">
+        <h2>What I have no patience for</h2>
+        <p>
+          Being held back, especially holding myself back, by what I see as
+          irrational behaviour in others. At work that usually shows up as fear or
+          indecision. Both tend to come from a lack of obvious information combined
+          with a wildly catastrophic view of the consequences. Some people would
+          rather sit on that gap and defer the decision than close it. I have been
+          guilty of exactly this, which is probably why it irritates me so much.
+          Sitting on a big decision that affects other people, out of fear, while
+          doing nothing to resolve it, is the thing I find hardest to forgive. I
+          am working on it.
+        </p>
+        <p>
+          Not doing the easy, obvious thing you said you would do, usually because
+          of overcommitment or an overambitious plan. I do this too. It is annoying
+          in me and annoying in everyone else.
+        </p>
+        <p>
+          Meddling in, or correcting, the really little things: the way to stir a
+          pot. I do this as well, and I find it maddening to be corrected on
+          something that does not matter. Even where I have no experience, I trust
+          myself to learn from my own mistakes.
+        </p>
+        <p>
+          I am very slow to anger, and when it comes it tends to be rational rather
+          than emotional. Two things make me lose faith in someone over time:
+          repeated behaviour that damages other people, and a proven inability to
+          learn from mistakes. On the first, I do not count disagreement or a good
+          argument as damage; I mean politics, falsehoods and rumours, the things
+          that corrode the relationships within a team or a family. On the second,
+          learning is central to what I value: I do not mind things going wrong, as
+          long as it is different things each time. I intensely dislike the same
+          mistake twice.
+        </p>
+        <p>And, finally, the road to hell is paved with fluffy language.</p>
+      </section>
+
+      <section class="manual-section">
+        <h2>How best to communicate with me</h2>
+        <p>
+          When I am hot, tired or hungry I communicate badly and decide worse. It
+          is a common enough affliction. I will try to flag when a conversation
+          would be better saved for later, but if you sense we should come back to
+          something, just say so.
+        </p>
+        <p>
+          I draw a hard line between an <strong>interruption</strong> and a
+          <strong>communication</strong>. An interruption is something that
+          genuinely demands attention now, because it needs an action that cannot
+          wait. Almost everything else is a communication.
+        </p>
+        <p>
+          I manage my email carefully and almost never lose anything in it. So if
+          you need me to read something and respond, that is where it should go.
+          Anywhere else, there is a real chance it gets lost. If you are messaging
+          me out of the blue, make it either something I can answer in twenty
+          seconds off the top of my head, or something urgent enough to earn my
+          immediate attention. If it is neither, all I will do is copy it into my
+          email, where it belonged in the first place.
+        </p>
+        <p>
+          There is really only one state I mind being interrupted in, and that is
+          the creative one: writing prose or code. When I am there, almost
+          everything else is switched off, and if you break the spell you may get
+          an emotional response, because it can take me days to find my way back.
+          That said, protecting that state is my job, not yours, now that we work
+          remotely.
+        </p>
+        <p>
+          Out of the blue phone calls terrify me, so I make them very rarely. Email
+          or WhatsApp first. I will always give you room to reflect and think, and
+          I ask for the same in return.
+        </p>
+        <p>
+          This next part is a little awkward. I like to think about something in
+          advance, even for a single minute. But I am deeply impatient with
+          thinking about it for much longer. Long stretches of thought mostly
+          introduce bias and add no value: with no new input, no reading and no
+          other voices, the brain just spins up stories to justify the instinct you
+          already had. If there is time to spend, spend it gathering more
+          information, not thinking.
+        </p>
+        <p>
+          I get frustrated by a mismatch between how urgent something is and how
+          much action it gets. If something needs a decision, it needs attention:
+          decisions left unmade only create more work later. So it is always fine
+          to interrupt whatever I am doing to make a decision, especially one that
+          affects other people.
+        </p>
+        <p>
+          And a warning: bring me a complex problem with very little information and
+          ask for an answer on the spot, and you will get one that is elegant, well
+          reasoned and fundamentally stupid. I might sound convincing. That does not
+          make me right. With little information I am no better than you at a hard
+          decision; I just may sound as though I am.
+        </p>
+      </section>
+
+      <section class="manual-section">
+        <h2>Why I do what I do</h2>
+        <p>
+          If I could do the same thing every day, I would cook with my family, walk
+          through a forest, and help other people change the world for the better.
+        </p>
+        <p>
+          My ideal introductory conversation is one where we run through fifteen
+          ideas for making the world a fairer, better place, and leave with some
+          kind of plan or experiment to try.
+        </p>
+      </section>
+
+      <section class="manual-section">
+        <h2>A note on all this</h2>
+        <p>
+          I wrote this to help people work with me, or to decide not to. I have
+          plenty of flaws, and setting them out in the open is not an invitation to
+          conform to them. It is simply an attempt to make our time together better,
+          and a signal that I care just as much about your version of this document,
+          whether you have written it down or not.
+        </p>
+        <p>
+          If any of this helped, or if there is a part I could put better, I would
+          genuinely like to know.
+        </p>
+        <div class="manual-close">
+          <a class="btn btn-primary" href="mailto:may.jon@gmail.com">may.jon@gmail.com</a>
+          <a class="btn btn-ghost" href="index.html">← Back to the site</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> Jonathan May. Built in Bristol.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
