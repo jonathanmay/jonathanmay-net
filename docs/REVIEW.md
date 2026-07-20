@@ -1,6 +1,27 @@
 # Review — portfolio
 
 <!-- statuscheck: ok -->
+## Nightly review: 2026-07-21
+
+### 1. Refactor / simplify / improve
+
+**New, and the one thing worth doing tonight: `docs/` is being published to the live site.** `.dockerignore` contains `*.md`, but Docker matches that pattern against the *whole* relative path with `*` not crossing `/` — so it excludes root-level `README.md` and `CLAUDE.md` and nothing else. `Dockerfile:3` then does `COPY . /usr/share/nginx/html`, and nginx serves whatever is there, so `jonathanmay.net/docs/REVIEW.md`, `/docs/STATUS.md`, `/docs/BACKLOG.md` and `/docs/DECISIONS.md` are all publicly fetchable. That means every nightly review — including candid commentary on unreleased projects and the open-source promise — is on the public internet. Fix: change the pattern to `**/*.md` (or add a `docs` line). **Effort: 2 minutes**, then redeploy. Added as backlog #1.
+
+**Mobile nav, now upgraded from polish to a real gap.** `styles.css:91-92` is `.site-nav a:not(:last-child) { display: none }`; the last child is the theme button, so below 620px *every* nav link disappears. Until 2026-07-20 that only cost anchor links to sections you could scroll to anyway. Now `manual.html` is a separate page reachable *only* from that nav, and nothing in the hero or body of `index.html` links to it — so on a phone the new User Manual page is unreachable. **Effort: ~15 min** to just stop hiding the links (or add a hero/contact link to it), ~1 hr for a proper menu. Backlog #2.
+
+Standing items, unchanged and not re-argued: dark-mode FOUC + honour `prefers-color-scheme` via a tiny inline `<head>` script (`script.js:4-5`, ~20 min); a real ~1200×630 OG image (`index.html:13` and `manual.html:13` both point at the square `apple-touch-icon.png`, ~30 min — folded into the site-plumbing backlog line). `manual.html`'s ~80 lines of inline `<style>` are fine where they are; a second page does not justify moving them into `styles.css` yet.
+
+### 2. Step back
+
+Positioning and voice are right, and the User Manual is a genuinely good addition — it is the most distinctive thing on the site and does more to convey how you work than the CV timeline does. No case to pause, merge, or abandon. Two observations rather than tasks. First, the manual is currently a leaf: linked from a nav that vanishes on mobile, with no pull from the hero or the About section, so most visitors will never see the best page. Worth a sentence and a link in About. Second, the open-source promise at `index.html:374` remains the only item needing a human decision rather than another observation, and it is now materially more awkward given `docs/` is being served publicly — decide it either way (release 2–3 repos, or soften the wording).
+
+### 3. Doc inconsistencies
+
+- `README.md` describes the site as one page and lists `index.html — the page`; `manual.html` has existed since 2026-07-20 and is missing from the file list. Outside my write scope (STATUS/BACKLOG/REVIEW only) — one-line fix.
+- `docs/DECISIONS.md:6` still carries the literal placeholder heading `## YYYY-MM-DD — Project created` instead of a real date. Also outside my write scope; flagged since 2026-07-02.
+- `CLAUDE.md` still has TODO placeholders under "How to work in it" for install/run/test and conventions. For a no-build static site the honest answer is `python3 -m http.server 8000` and `fly deploy`, which README already documents — worth copying across or deleting the TODOs.
+- STATUS.md updated tonight to mention `manual.html` (it described a single-page site).
+
 ## Nightly review: 2026-07-19
 
 ### 1. Refactor / simplify / improve
