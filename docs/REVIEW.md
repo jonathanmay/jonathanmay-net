@@ -225,3 +225,31 @@ Two honest flags:
 
 Otherwise: this project is worth keeping exactly as it is. It's low-maintenance, it's live,
 and it earns its place. No case for pausing, merging, or abandoning.
+
+<!-- statuscheck: ok -->
+## Nightly review: 2026-07-22
+
+### 1. Refactor / simplify / improve
+- **Stop serving internal docs publicly** (still the top backlog item, and the most valuable
+  thing here). `.dockerignore` only lists `*.md`, which in Docker matches root-level files only —
+  so `docs/STATUS.md`, `docs/BACKLOG.md`, `docs/DECISIONS.md` and this `docs/REVIEW.md` (which
+  contains candid internal notes) are copied into the nginx image and reachable at
+  `jonathanmay.net/docs/REVIEW.md`. Fix is one line: add `docs/` (or `**/*.md`) to
+  `.dockerignore`. Effort: ~5 min. This is a genuine info-leak, not cosmetics.
+- Nothing else worth doing. The site is small, plain HTML/CSS/vanilla JS with no build step;
+  there is no accidental complexity to unwind and no premature abstraction to add.
+
+### 2. Step back
+Positioning is right and the project is fine as it stands: a low-maintenance, live personal
+portfolio that earns its place. The only thing that genuinely matters is the docs-leak above
+(a privacy issue, not a product one). The remaining backlog items are legitimate polish
+(site plumbing, open-source plan) but none are urgent — don't manufacture work here.
+
+### 3. Doc inconsistencies
+- **Fixed:** the "make the nav usable on mobile" backlog item was stale — its stated problem
+  ("the User Manual page has no route in from index.html on a phone") was resolved by commit
+  10546c3, which added an always-visible "Read my User Manual" button in the Contact section
+  (Contact is the one nav link that stays visible below 620px). Removed the item. A proper
+  mobile menu is not worth chasing for a personal site.
+- **Fixed:** `README.md` listed only `index.html` ("the page") and omitted `manual.html`; added
+  it to the file list.

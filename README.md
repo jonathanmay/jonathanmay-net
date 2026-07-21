@@ -8,7 +8,8 @@ I've built. Static site, no build step.
 Plain HTML, CSS, and a little vanilla JavaScript (theme toggle + scroll
 reveal). Served by Nginx on [Fly.io](https://fly.io).
 
-- `index.html` — the page
+- `index.html` — the main page (CV + projects)
+- `manual.html` — "A User Manual to Me"
 - `styles.css` — styles (light by default, dark via the toggle)
 - `script.js` — theme toggle and scroll reveal
 - `portrait.jpg`, `favicon*`, `apple-touch-icon.png` — imagery
