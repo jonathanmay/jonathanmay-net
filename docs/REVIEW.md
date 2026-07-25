@@ -1,6 +1,31 @@
 # Review — portfolio
 
 <!-- statuscheck: ok -->
+## Nightly review: 2026-07-26
+
+### 1. Refactor / simplify / improve
+
+**Resolved since last review:** the mobile User Manual gap. Commit `10546c3` (2026-07-21) added a "Read my User Manual" button to the Contact section (`index.html:381`), and `manual.html`'s hero carries "← Back to the site" — so the page is reachable both ways on a phone. `styles.css:92` still hides every nav link below 620px, but with the manual linked from the body that is now cosmetic polish, not a gap. Dropping it from the standing list.
+
+**Still open, still the one thing worth doing: `docs/` is published to the live site.** Re-verified tonight — `.dockerignore` is unchanged (`.claude`, `.git`, `*.md`), and Docker matches `*` without crossing `/`, so it excludes root-level `README.md` and `CLAUDE.md` only. `Dockerfile:3` does `COPY . /usr/share/nginx/html` and nginx serves the tree, so `jonathanmay.net/docs/REVIEW.md`, `/docs/STATUS.md`, `/docs/BACKLOG.md` and `/docs/DECISIONS.md` are publicly fetchable — including every nightly review, with its commentary on unreleased projects. Fix: `**/*.md`, or add a `docs` line. **Effort: 2 minutes** plus a redeploy. Backlog #1. I can't apply it myself (non-markdown file, outside my write scope).
+
+Standing and not re-argued: dark-mode FOUC + honour `prefers-color-scheme` via a tiny inline `<head>` script (`script.js:4-5` still applies the stored theme only, no OS fallback, ~20 min); a real ~1200×630 OG image (`index.html:13` and `manual.html:13` both still point at the square `apple-touch-icon.png`, ~30 min, folded into the site-plumbing backlog line).
+
+### 2. Step back
+
+The site is right as it stands — positioning, voice, structure — and no case to pause, merge, or abandon. One new observation and one carried decision.
+
+New: the **project cards have drifted from reality**. Iris's card (`index.html:192-195`) sells it as an "AI intelligence layer for advancement" with a "Strategic prototype" pill; Iris is now the CRM, with a decided go-to-market. That copy is the public face of the thing you are actually building, and it currently undersells it. Same shape of drift, less consequential, on the other "In development" pills (Hubbub Deals, Homewise, MeetMe) — some have moved on since June. This is a 30-minute copy pass, not a project, and I've sharpened backlog #3 to say so.
+
+Carried: the **open-source promise** at `index.html:375` ("I'm hoping to open-source most of these projects … I'll figure out how to share it") is still the only item needing a human decision rather than another observation. Release 2–3 repos, or soften the wording to something you're happy leaving up indefinitely.
+
+### 3. Doc inconsistencies
+
+- `docs/DECISIONS.md:6` still carries the literal placeholder heading `## YYYY-MM-DD — Project created` instead of a real date. Outside my write scope — flagged since 2026-07-02.
+- `CLAUDE.md` still has TODO placeholders under "How to work in it" for install/run/test and conventions. For a no-build static site the honest answers are `python3 -m http.server 8000` and `fly deploy`, both already in `README.md` — copy them across or delete the TODOs.
+- Fixed tonight: STATUS.md now records that the manual is reachable on mobile, and carries the `docs/`-exposure item under a "Known issues" heading (it previously read "no blockers", which was true but hid a live-site issue). BACKLOG.md item 2's line reference corrected to `index.html:375`.
+- Previously flagged, now resolved: `README.md` lists `manual.html`.
+
 ## Nightly review: 2026-07-21
 
 ### 1. Refactor / simplify / improve
